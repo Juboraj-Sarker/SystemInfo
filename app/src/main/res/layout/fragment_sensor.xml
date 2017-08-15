@@ -1,0 +1,475 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.juborajsarker.systeminfo.fragment.system.SensorFragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sn_accelerometer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Accelerometer"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_accelerometer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:text=""
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/highLight">
+
+                    <TextView
+                        android:id="@+id/sn_compass"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Compass"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_compass"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sn_proximity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Proximity"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_proximity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/highLight">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sn_gyro"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Gyroscope"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_gyro"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sn_light"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Ambient Light Sensor"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_light"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/highLight">
+
+                    <TextView
+                        android:id="@+id/sn_barometer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Barometer"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_barometer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sn_relative_humidity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Relative Humidity"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_relative_humidity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/highLight">
+
+                    <TextView
+                        android:id="@+id/sn_heart_rate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Heart Rate Monitor"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_heart_rate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sn_temperature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Temperature Sensor"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_temperature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/highLight">
+
+                    <TextView
+                        android:id="@+id/sn_fingerprint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Fingerprint Sensor"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sensor_fingerprint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,383 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.juborajsarker.systeminfo.fragment.system.OSFragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Android version"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_android_version"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/highLight">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Version Name"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_android_version_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="API Level"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_api_level"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/highLight">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Root Access"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_root_access"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Build ID"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_os_build_id"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/highLight">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Code Name"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_os_version_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor" />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:text="Fingerprint"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_fingerprint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorBlack"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/viewColor" />
+
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="SMART_BANNER"
+                android:layout_gravity="center"
+                ads:adUnitId="@string/banner_home_footer_1">
+            </com.google.android.gms.ads.AdView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,422 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.juborajsarker.systeminfo.fragment.device.BatteryFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_marginTop="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Level"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_level"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    android:background="@color/highLight">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Health"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_health"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Charging Status"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    android:background="@color/highLight">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Plug-In Status"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_plugin_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Capacity"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_capacity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    android:background="@color/highLight">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Voltage"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_voltage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Temperature"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_temperature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    android:background="@color/highLight">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Technology"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_battery_technology"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/textColorBlack"
+                        android:layout_weight="1"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/viewColor"/>
+
+
+            </LinearLayout>
+
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="SMART_BANNER"
+                android:layout_gravity="center"
+                ads:adUnitId="@string/banner_home_footer_1">
+            </com.google.android.gms.ads.AdView>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
