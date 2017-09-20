@@ -187,7 +187,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    public void aboutMe(MenuItem item) {
 
-
-
+        startActivity(new Intent(MainActivity.this, AboutActivity.class));
+    }
 }

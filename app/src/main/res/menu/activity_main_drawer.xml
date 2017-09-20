@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -17,17 +18,19 @@
 
     </group>
 
-    <item android:title="Communicate">
+    <item
+        android:title="Communicate">
+
         <menu>
 
             <item
                 android:id="@+id/nav_rateApp"
                 android:icon="@drawable/setting_icon"
-                android:title="Rate this app" />
+                android:title="Rate This App" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Share This App" />
 
             <item
                 android:id="@+id/nav_moreApps"
@@ -35,6 +38,7 @@
                 android:title="More Apps" />
 
         </menu>
+
     </item>
 
 </menu>

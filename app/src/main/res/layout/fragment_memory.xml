@@ -27,6 +27,7 @@
                android:text="RAM"
                android:gravity="center"
                android:textSize="20sp"
+               android:textStyle="bold"
                android:textColor="#fff"
                android:padding="4dp"
                android:layout_marginTop="105dp"/>
@@ -47,7 +48,7 @@
 
                        android:layout_width="0dp"
                        android:layout_height="wrap_content"
-                       android:text="Total"
+                       android:text="Total Space"
                        android:layout_weight="1"
                        android:textColor="@color/textColorBlack"
                        android:textSize="18sp"
@@ -94,7 +95,7 @@
 
                        android:layout_width="0dp"
                        android:layout_height="wrap_content"
-                       android:text="Avialable"
+                       android:text="Avialable Space"
                        android:layout_weight="1"
                        android:textSize="18sp"
                        android:textColor="@color/textColorBlack"
@@ -132,6 +133,7 @@
                android:background="@color/colorPrimaryDark"
                android:text="INTERNAL"
                android:gravity="center"
+               android:textStyle="bold"
                android:textSize="20sp"
                android:textColor="#fff"
                android:padding="4dp" />
@@ -153,7 +155,7 @@
 
                        android:layout_width="0dp"
                        android:layout_height="wrap_content"
-                       android:text="Total"
+                       android:text="Total Space"
                        android:layout_weight="1"
                        android:textColor="@color/textColorBlack"
                        android:textSize="18sp"
@@ -199,7 +201,7 @@
 
                        android:layout_width="0dp"
                        android:layout_height="wrap_content"
-                       android:text="Avialable"
+                       android:text="Avialable Space"
                        android:layout_weight="1"
                        android:textColor="@color/textColorBlack"
                        android:textSize="18sp"
@@ -235,8 +237,9 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:background="@color/colorPrimaryDark"
-               android:text="EXTERNAL"
+               android:text="EXTERNAL (SD Card)"
                android:gravity="center"
+               android:textStyle="bold"
                android:textSize="20sp"
                android:textColor="#fff"
                android:padding="4dp"/>
@@ -269,6 +272,7 @@
                        android:layout_width="0dp"
                        android:layout_height="wrap_content"
                        android:textStyle="bold"
+                       android:text=""
                        android:textSize="18sp"
                        android:textColor="@color/textColorBlack"
                        android:layout_weight="1"
@@ -303,7 +307,7 @@
 
                        android:layout_width="0dp"
                        android:layout_height="wrap_content"
-                       android:text="Total"
+                       android:text="Total Space"
                        android:layout_weight="1"
                        android:textColor="@color/textColorBlack"
                        android:textSize="18sp"
@@ -318,6 +322,7 @@
                        android:textStyle="bold"
                        android:textSize="18sp"
                        android:layout_weight="1"
+                       android:text=""
                        android:paddingRight="8dp"
                        android:textColor="@color/textColorBlack"
                        android:paddingBottom="8dp"/>
@@ -345,7 +350,7 @@
 
                    android:layout_width="0dp"
                    android:layout_height="wrap_content"
-                   android:text="Avialable"
+                   android:text="Avialable Space"
                    android:layout_weight="1"
                    android:textColor="@color/textColorBlack"
                    android:textSize="18sp"
@@ -359,6 +364,7 @@
                    android:layout_height="wrap_content"
                    android:textStyle="bold"
                    android:textSize="18sp"
+                   android:text=""
                    android:layout_weight="1"
                    android:paddingRight="8dp"
                    android:textColor="@color/textColorBlack"

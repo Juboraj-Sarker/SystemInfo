@@ -1,7 +1,6 @@
 package com.juborajsarker.systeminfo.fragment.system;
 
 
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,17 +13,17 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.juborajsarker.systeminfo.R;
+import com.juborajsarker.systeminfo.SystemInfoManager;
 
 import java.io.File;
-
-import static android.content.Context.MODE_PRIVATE;
 
 
 public class OSFragment extends Fragment {
 
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    String flag = "";
+    private static final int ROOT_STATUS_NOT_CHECKED = 0;
+    private static final int ROOT_STATUS_ROOTED = 1;
+    private static final int ROOT_STATUS_NOT_ROOTED = 2;
+
 
     View view;
 
@@ -43,35 +42,14 @@ public class OSFragment extends Fragment {
 
         init();
 
-        sharedPreferences = getActivity().getSharedPreferences("osPrefences", MODE_PRIVATE);
-        editor = sharedPreferences.edit();
 
-        flag = sharedPreferences.getString("osStatus", "");
-
-        if (flag.equals("true")){
-
-
-            tv_android_version.setText(sharedPreferences.getString("osVersion", ""));
-            tv_version_name.setText(sharedPreferences.getString("versionName", ""));
-            tv_api_level.setText(sharedPreferences.getString("apiLevel", ""));
-            tv_root_access.setText(sharedPreferences.getString("rootAccess", ""));
-            tv_build_id.setText(sharedPreferences.getString("buildID", ""));
-            tv_version_code.setText(sharedPreferences.getString("codeName", ""));
-            tv_fingerprint.setText(sharedPreferences.getString("fingerprint", ""));
+        getOSInfo();
 
 
 
-        }else {
-
-
-            getOSInfo();
-        }
-
-
-
-        MobileAds.initialize(getActivity().getApplicationContext(), "ca-app-pub-5809082953640465/9420368065");
+        MobileAds.initialize(getActivity().getApplicationContext(), "ca-app-pub-5809082953640465/8636394653");
         AdView mAdView = (AdView) view.findViewById(R.id.adView1);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("2BA46C54FD47FD80CBBAD95AE0F70E1A").build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("93448558CC721EBAD8FAAE5DA52596D3").build();
         mAdView.loadAd(adRequest);
 
 
@@ -81,12 +59,7 @@ public class OSFragment extends Fragment {
     }
 
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
 
-        editor.putString("osStatus", "false");
-    }
 
     private void init() {
 
@@ -102,7 +75,7 @@ public class OSFragment extends Fragment {
     private void getOSInfo() {
 
 
-        editor.putString("osStatus", "true");
+
 
 
         String version = Build.VERSION.RELEASE;
@@ -110,16 +83,17 @@ public class OSFragment extends Fragment {
         String fingerprint = Build.FINGERPRINT;
         String build_id = Build.ID;
 
-        getRootInfo();
-        if (getRootInfo()){
+        isRooted();
+
+        if (isRooted()){
 
             tv_root_access.setText("ROOTED");
-            editor.putString("rootAccess", "ROOTED");
+
 
         }else {
 
             tv_root_access.setText("NOT ROOTED");
-            editor.putString("rootAccess", "NOT ROOTED");
+
         }
 
 
@@ -129,91 +103,154 @@ public class OSFragment extends Fragment {
         if (os_version == Build.VERSION_CODES.JELLY_BEAN || os_version == Build.VERSION_CODES.JELLY_BEAN_MR1 || os_version == Build.VERSION_CODES.JELLY_BEAN_MR2){
 
             tv_version_name.setText("JELLY BEAN");
-            editor.putString("versionName", "JELLY BEAN");
+
 
         }else if (os_version == Build.VERSION_CODES.KITKAT || os_version == Build.VERSION_CODES.KITKAT_WATCH){
 
             tv_version_name.setText("KITKAT");
-            editor.putString("versionName", "KITKAT");
+
 
         }else if (os_version == Build.VERSION_CODES.LOLLIPOP || os_version == Build.VERSION_CODES.LOLLIPOP_MR1){
 
             tv_version_name.setText("LOLLIPOP");
-            editor.putString("versionName", "LOLLIPOP");
+
 
         }else if (os_version == Build.VERSION_CODES.M ){
 
             tv_version_name.setText("MARSHMALLOW");
-            editor.putString("versionName", "MARSHMALLOW");
+
 
         }else if (os_version == Build.VERSION_CODES.N || os_version == Build.VERSION_CODES.N_MR1){
 
             tv_version_name.setText("NOUGAT");
-            editor.putString("versionName", "NOUGAT");
+
 
         }
 
         tv_android_version.setText(version);
-        editor.putString("osVersion", version);
+
 
         tv_api_level.setText(String.valueOf(api_level));
-        editor.putString("apiLevel", String.valueOf(api_level));
+
 
         tv_fingerprint.setText(fingerprint);
-        editor.putString("fingerprint", fingerprint);
+
 
         tv_build_id.setText(build_id);
-        editor.putString("buildID", build_id);
+
 
         tv_version_code.setText(Build.VERSION.CODENAME);
-        editor.putString("codeName", Build.VERSION.CODENAME);
-
-        editor.commit();
-
-
 
 
 
     }
 
-    private boolean getRootInfo() {
+//    private boolean getRootInfo() {
+//
+//
+//        // get from build info
+//        String buildTags = android.os.Build.TAGS;
+//        if (buildTags != null && buildTags.contains("test-keys")) {
+//            return true;
+//        }
+//
+//        // check if /system/app/Superuser.apk is present
+//        try {
+//            File file = new File("/system/app/Superuser.apk");
+//            if (file.exists()) {
+//                return true;
+//            }
+//        } catch (Exception e1) {
+//            // ignore
+//        }
+//
+//        // try executing commands
+//        return canExecuteCommand("/system/xbin/which su")
+//                || canExecuteCommand("/system/bin/which su") || canExecuteCommand("which su");
+//    }
+//
+//    // executes a command on the system
+//    private static boolean canExecuteCommand(String command) {
+//        boolean executedSuccessfully;
+//        try {
+//            Runtime.getRuntime().exec(command);
+//            executedSuccessfully = true;
+//        } catch (Exception e) {
+//            executedSuccessfully = false;
+//        }
+//
+//        return executedSuccessfully;
+//
+//
+//    }
 
 
-        // get from build info
-        String buildTags = android.os.Build.TAGS;
-        if (buildTags != null && buildTags.contains("test-keys")) {
-            return true;
+
+
+
+
+
+
+
+
+
+    public static boolean isRooted() {
+        int rootStatus = SystemInfoManager.getAppPreferences().getRootStatus();
+        boolean isRooted = false;
+        if (rootStatus == ROOT_STATUS_NOT_CHECKED) {
+            isRooted = isRootByBuildTag() || isRootedByFileSU() || isRootedByExecutingCommand();
+            SystemInfoManager.getAppPreferences().setRootStatus(isRooted ? ROOT_STATUS_ROOTED : ROOT_STATUS_NOT_ROOTED);
+        } else if (rootStatus == ROOT_STATUS_ROOTED) {
+            isRooted = true;
         }
+        return isRooted;
+    }
 
-        // check if /system/app/Superuser.apk is present
+    public static boolean isRootByBuildTag() {
+        String buildTags = Build.TAGS;
+        return ((buildTags != null && buildTags.contains("test-keys")));
+    }
+
+    public static boolean isRootedByFileSU() {
         try {
             File file = new File("/system/app/Superuser.apk");
             if (file.exists()) {
                 return true;
             }
         } catch (Exception e1) {
-            // ignore
         }
-
-        // try executing commands
-        return canExecuteCommand("/system/xbin/which su")
-                || canExecuteCommand("/system/bin/which su") || canExecuteCommand("which su");
+        return false;
     }
 
-    // executes a command on the system
+    public static boolean isRootedByExecutingCommand() {
+        return canExecuteCommand("/system/xbin/which su")
+                || canExecuteCommand("/system/bin/which su")
+                || canExecuteCommand("which su");
+    }
+
+
     private static boolean canExecuteCommand(String command) {
-        boolean executedSuccessfully;
+        boolean isExecuted;
         try {
             Runtime.getRuntime().exec(command);
-            executedSuccessfully = true;
+            isExecuted = true;
         } catch (Exception e) {
-            executedSuccessfully = false;
+            isExecuted = false;
         }
 
-        return executedSuccessfully;
-
-
+        return isExecuted;
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

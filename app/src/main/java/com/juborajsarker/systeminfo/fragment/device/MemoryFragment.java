@@ -32,11 +32,11 @@ import static android.content.Context.ACTIVITY_SERVICE;
 public class MemoryFragment extends Fragment {
 
 
+    private static final String LOG_TAG = "";
     View view;
     TextView total_ram, avialable_ram, total_rom, avialable_rom, external_present, total_external, avialable_external;
 
     public static String sss = "";
-
 
 
     public Handler mHandler = new Handler();
@@ -62,35 +62,20 @@ public class MemoryFragment extends Fragment {
         getAvailableInternalMemorySize();
         getTotalInternalMemorySize();
 
+
         externalMemoryAvailable();
         getAvailableExternalMemorySize();
         getTotalExternalMemorySize();
+
 
         total_rom.setText(getTotalInternalMemorySize());
         avialable_rom.setText(getAvailableInternalMemorySize());
 
 
-        if (externalMemoryAvailable()) {
-
-            total_external.setText(getTotalExternalMemorySize());
-            avialable_external.setText(getAvailableExternalMemorySize());
-
-        } else {
-
-            external_present.setText("NOOOOO");
-            total_external.setText("NULL");
-            avialable_external.setText("NULL");
-
-        }
-
-
-        MobileAds.initialize(getActivity().getApplicationContext(), "ca-app-pub-5809082953640465/9420368065");
+        MobileAds.initialize(getActivity().getApplicationContext(), "ca-app-pub-5809082953640465/8636394653");
         AdView mAdView = (AdView) view.findViewById(R.id.adView1);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("2BA46C54FD47FD80CBBAD95AE0F70E1A").build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("93448558CC721EBAD8FAAE5DA52596D3").build();
         mAdView.loadAd(adRequest);
-
-
-
 
 
         return view;
@@ -101,7 +86,7 @@ public class MemoryFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-     //   mHandler.postDelayed(mRunnable, 1000);
+        //   mHandler.postDelayed(mRunnable, 1000);
 
         avialable_ram.setText(getAvailableRAM());
     }
@@ -109,12 +94,8 @@ public class MemoryFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-       // mHandler.removeCallbacks(mRunnable);
+        // mHandler.removeCallbacks(mRunnable);
     }
-
-
-
-
 
 
     private void init() {
@@ -217,7 +198,6 @@ public class MemoryFragment extends Fragment {
     }
 
 
-
 //    public final Runnable mRunnable = new Runnable() {
 //        @Override
 //        public void run() {
@@ -231,19 +211,6 @@ public class MemoryFragment extends Fragment {
 //
 //    };
 
-
-
-    public static boolean externalMemoryAvailable() {
-
-
-        File file = new File("df /mnt/sdcard");
-        try {
-            File list[] = file.listFiles();
-            return true;
-        } catch (NullPointerException o) {
-            return false;
-        }
-    }
 
     public static String getAvailableInternalMemorySize() {
         File path = Environment.getDataDirectory();
@@ -263,62 +230,68 @@ public class MemoryFragment extends Fragment {
     }
 
 
+    public static boolean externalMemoryAvailable() {
+
+
+        File file = new File("df /mnt/sdcard");
+        try {
+            File list[] = file.listFiles();
+            return true;
+        } catch (NullPointerException o) {
+            return false;
+        }
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private String getAvailableExternalMemorySize() {
 
 
-        String secStore = System.getenv("SECONDARY_STORAGE");
-        File path = new File(secStore);
-        StatFs stat = new StatFs(path.getPath());
-        float avialableEx = 0;
-        String ret = "";
+        File storage = new File("/storage");
+        String external_storage_path = "";
+        String size = "";
 
-        long blockSize = stat.getBlockSize();
+        if (storage.exists()) {
+            File[] files = storage.listFiles();
 
-        long availableBlocks = stat.getAvailableBlocks();
+            for (File file : files) {
+                if (file.exists()) {
+                    try {
+                        if (Environment.isExternalStorageRemovable(file)) {
 
-        long total = availableBlocks * blockSize;
-
-        if (total >= 1073741824) {
-
-            external_present.setText("YES");
-            avialableEx = (float) total / 1073741824;
-            ret= (String.format("%.2f", avialableEx) + " GB");
-
-        }else if ( (total >= 1048576)  && (total < 1073741824) ){
-
-            external_present.setText("YES");
-            avialableEx = (float) total / 1048576;
-            ret= (String.format("%.2f", avialableEx) + " MB");
-
-        }else if ( (total >= 1024) && (total < 1048576 ) ){
-
-            external_present.setText("YES");
-            avialableEx = (float) total / 1024;
-            ret= (String.format("%.2f", avialableEx) + " KB");
-
-        }else if ( (total > 0) && (total < 1024) ){
-
-            external_present.setText("YES");
-            avialableEx = (float) total;
-            ret= (String.format("%.2f", avialableEx) + " byte");
-
-        }else {
-
-            ret= (String.format("%.2f", avialableEx));
-            external_present.setText("NO");
-
+                            external_storage_path = file.getAbsolutePath();
+                            break;
+                        }
+                    } catch (Exception e) {
+                        Log.e("TAG", e.toString());
+                    }
+                }
+            }
         }
 
+        if (!external_storage_path.isEmpty()) {
+            File external_storage = new File(external_storage_path);
+            if (external_storage.exists()) {
+                size = availableSize(external_storage);
 
+                if (size.equals("0.00")){
+                    external_present.setText("NO");
+                    avialable_external.setText("No SD Card");
 
+                }else {
 
-        return  ret;
+                    external_present.setText("YES");
+                    avialable_external.setText(size);
+                }
+            }
+        }
+        return size;
 
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public static String getTotalExternalMemorySize() {
+    public  String getTotalExternalMemorySize() {
 
         File storage = new File("/storage");
         String external_storage_path = "";
@@ -346,6 +319,17 @@ public class MemoryFragment extends Fragment {
             File external_storage = new File(external_storage_path);
             if (external_storage.exists()) {
                 size = totalSize(external_storage);
+
+                if (size.equals("0.00")){
+
+                    external_present.setText("NO");
+                    total_external.setText("No SD Card");
+
+                }else {
+
+                    external_present.setText("YES");
+                    total_external.setText(size);
+                }
             }
         }
         return size;
@@ -368,6 +352,38 @@ public class MemoryFragment extends Fragment {
 
         return formatSize(totalBlocks * blockSize);
     }
+
+
+
+
+
+
+
+    public static String availableSize(File file) {
+        StatFs stat = new StatFs(file.getPath());
+        long blockSize, availableBlock;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            blockSize = stat.getBlockSizeLong();
+            availableBlock = stat.getAvailableBlocksLong();
+        } else {
+            blockSize = stat.getBlockSize();
+            availableBlock = stat.getAvailableBlocks();
+
+        }
+
+        return formatSize( availableBlock * blockSize   );
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     public static String formatSize(float size) {
@@ -395,3 +411,7 @@ public class MemoryFragment extends Fragment {
 
 
 }
+
+
+
+

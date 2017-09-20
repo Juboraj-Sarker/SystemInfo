@@ -1,7 +1,6 @@
 package com.juborajsarker.systeminfo.fragment.system;
 
 
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,15 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 
-import static android.content.Context.MODE_PRIVATE;
-
 public class ProcessorFragment extends Fragment {
-
-
-
-
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
 
 
 
@@ -71,8 +62,6 @@ public class ProcessorFragment extends Fragment {
         getKernelArchitecture();
 
 
-        sharedPreferences = getActivity().getSharedPreferences("processorPrefences", MODE_PRIVATE);
-        editor = sharedPreferences.edit();
 
 
 
@@ -148,6 +137,10 @@ public class ProcessorFragment extends Fragment {
 
 
             tv_cpu_model.setText("X86");
+
+        }else if (arch.contains("aarch")){
+
+            tv_cpu_model.setText("AARCH");
         }
 
 

@@ -25,6 +25,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:text="DEVICE"
+                android:textStyle="bold"
                 android:textColor="#fff"
                 android:textSize="20sp" />
 
@@ -219,6 +220,7 @@
                         android:paddingBottom="8dp"
                         android:paddingRight="8dp"
                         android:textStyle="bold"
+                        android:text=""
                         android:textColor="@color/textColorBlack"
                         android:textSize="18sp" />
 
@@ -241,6 +243,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:text="SCREEN"
+                android:textStyle="bold"
                 android:textColor="#fff"
                 android:textSize="20sp" />
 
@@ -420,6 +423,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:text="CAMERA"
+                android:textStyle="bold"
                 android:textColor="#fff"
                 android:textSize="20sp" />
 
@@ -455,6 +459,7 @@
                         android:paddingBottom="8dp"
                         android:paddingRight="8dp"
                         android:textStyle="bold"
+                        android:text=""
                         android:textColor="@color/textColorBlack"
                         android:textSize="18sp" />
 
@@ -500,6 +505,7 @@
                         android:layout_weight="1"
                         android:paddingBottom="8dp"
                         android:paddingRight="8dp"
+                        android:text=""
                         android:textStyle="bold"
                         android:textColor="@color/textColorBlack"
                         android:textSize="18sp" />
