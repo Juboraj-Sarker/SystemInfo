@@ -33,6 +33,8 @@ public class ProcessorFragment extends Fragment {
     String resultMax = "", resultMin= "";
 
     float maxResult, minResult;
+    String finalResultMaxString = "" ;
+    String finalResultMinString = "" ;
 
     TextView tv_cpu_model, tv_clock_speed, tv_hardware, tv_cpu_board, tv_cores, tv_bootloader, tv_java_heap,
             tv_cpu_load, tv_cpu_governor, tv_kernel_version, tv_kernel_architecture;
@@ -154,7 +156,7 @@ public class ProcessorFragment extends Fragment {
 
         countMin();
         countMax();
-        tv_clock_speed.setText(resultMin + " - " + resultMax);
+        tv_clock_speed.setText(finalResultMinString + " - " + finalResultMaxString);
 
 
 
@@ -163,6 +165,7 @@ public class ProcessorFragment extends Fragment {
     }
 
     private void countMax() {
+
 
 
         try {
@@ -177,27 +180,37 @@ public class ProcessorFragment extends Fragment {
                 resultMax += string;
 
 
-                if (resultMax.length() == 7){
+                maxResult = Float.parseFloat(resultMax);
 
-                    maxResult = Float.parseFloat(resultMax);
+
+
+                if ( (maxResult >= 1) && (maxResult < 1000 )){
+
+
+                    finalResultMaxString = String.format("%.2f", maxResult) + " KHz";
+
+
+
+                }else if ( (maxResult >= 1000) && (maxResult < 1000000) ){
+
                     maxResult = maxResult / 1000;
-                    resultMax = String.valueOf(maxResult) + " MHz";
+                    finalResultMaxString = String.format("%.2f", maxResult) + " MHz";
 
-                }else if (resultMax.length() == 8){
+                }else if ( (maxResult >= 1000000) && (maxResult < 1000000000) ){
 
-                    maxResult = Float.parseFloat(resultMax);
                     maxResult = maxResult / 1000000;
-                    resultMax = String.valueOf(maxResult) ;
-                    resultMax = resultMax.substring(0,4);
-                    resultMax = resultMax.concat( " GHz");
+                    finalResultMaxString = String.format("%.2f", maxResult) + " GHz";
 
+                }else if (maxResult >= 1000000000){
+
+                    maxResult = maxResult / 1000000000;
+                    finalResultMaxString = String.format("%.2f", maxResult) + " THz";
                 }
 
-
-
-
             }
+
             in.close();
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -206,7 +219,6 @@ public class ProcessorFragment extends Fragment {
     }
 
     private void countMin() {
-
 
 
         try {
@@ -220,28 +232,41 @@ public class ProcessorFragment extends Fragment {
                 Log.e(getClass().getSimpleName(), string);
                 resultMin += string;
 
-                if (resultMin.length() == 7){
 
-                    minResult = Float.parseFloat(resultMin);
+                minResult = Float.parseFloat(resultMin);
+
+
+                if ( (minResult >= 1) && (minResult < 1000 )){
+
+
+                    finalResultMinString = String.format("%.2f", minResult) + " KHz";
+
+                }else if ( (minResult >= 1000) && (minResult < 1000000) ){
+
                     minResult = minResult / 1000;
-                    resultMin = String.valueOf(minResult) + " MHz";
+                    finalResultMinString = String.format("%.2f", minResult) + " MHz";
 
-                }else if (resultMin.length() == 8){
+                }else if ( (minResult >= 1000000) && (minResult < 1000000000) ){
 
-                    minResult = Float.parseFloat(resultMin);
-                    minResult = minResult / 10000;
-                    resultMin = String.valueOf(minResult) + " GHz";
+                    minResult = minResult / 1000000;
+                    finalResultMinString = String.format("%.2f", minResult) + " GHz";
 
+                }else if (minResult >= 1000000000){
+
+                    minResult = minResult / 1000000000;
+                    finalResultMinString = String.format("%.2f", minResult) + " THz";
                 }
 
-
             }
+
             in.close();
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
     }
+
 
 
     private void getHardwareInfo() {

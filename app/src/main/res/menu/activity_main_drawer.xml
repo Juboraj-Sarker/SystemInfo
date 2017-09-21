@@ -5,15 +5,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_device"
-            android:icon="@drawable/device_icon"
+            android:icon="@drawable/ic_device_icon"
             android:title="Device Info" />
         <item
             android:id="@+id/nav_system"
-            android:icon="@drawable/system_icon"
+            android:icon="@drawable/ic_system_icon"
             android:title="System Info" />
         <item
             android:id="@+id/nav_apps"
-            android:icon="@drawable/apps_icon"
+            android:icon="@drawable/ic_app_icon"
             android:title="Apps Info" />
 
     </group>
@@ -25,16 +25,16 @@
 
             <item
                 android:id="@+id/nav_rateApp"
-                android:icon="@drawable/setting_icon"
+                android:icon="@drawable/ic_star_icon"
                 android:title="Rate This App" />
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_share_icon"
                 android:title="Share This App" />
 
             <item
                 android:id="@+id/nav_moreApps"
-                android:icon="@drawable/setting_more"
+                android:icon="@drawable/ic_more_apps_icon"
                 android:title="More Apps" />
 
         </menu>

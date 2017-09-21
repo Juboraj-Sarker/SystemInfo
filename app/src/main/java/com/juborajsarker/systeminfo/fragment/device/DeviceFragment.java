@@ -67,6 +67,9 @@ public class DeviceFragment extends Fragment {
     }
 
 
+
+
+
     @Override
     public void onResume() {
         super.onResume();
@@ -121,6 +124,8 @@ public class DeviceFragment extends Fragment {
             TelephonyManager telephonyManager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
             String imei = telephonyManager.getDeviceId();
             tv_IMEI.setText(imei);
+
+
         }
     }
 
@@ -229,8 +234,11 @@ public class DeviceFragment extends Fragment {
 
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
 
-            getBackCameraInfo();
-            getFrontCameraInfo();
+           // getBackCameraInfo();
+          //  getFrontCameraInfo();
+
+            getBackCameraResolutionInMp();
+            getFrontCameraResolutionInMp();
         }
 
 
@@ -240,40 +248,116 @@ public class DeviceFragment extends Fragment {
     }
 
 
-    private void getBackCameraInfo() {
 
-        Camera camera = Camera.open(0);
+    public float getBackCameraResolutionInMp() {
+        int noOfCameras = Camera.getNumberOfCameras();
+        float maxResolution = -1;
+        long pixelCount = -1;
+        for (int i = 0;i < noOfCameras;i++)
+        {
+            Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+            Camera.getCameraInfo(i, cameraInfo);
 
-        android.hardware.Camera.Parameters parameters = camera.getParameters();
-        android.hardware.Camera.Size size = parameters.getPictureSize();
+            if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK)
+            {
+                Camera camera = Camera.open(i);;
+                Camera.Parameters cameraParams = camera.getParameters();
+                for (int j = 0;j < cameraParams.getSupportedPictureSizes().size();j++)
+                {
+                    long pixelCountTemp = cameraParams.getSupportedPictureSizes().get(j).width * cameraParams.getSupportedPictureSizes().get(j).height; // Just changed i to j in this loop
+                    if (pixelCountTemp > pixelCount)
+                    {
+                        pixelCount = pixelCountTemp;
+                        maxResolution = ((float)pixelCountTemp) / (1024000.0f);
+                        tv_camera_back.setText(String.valueOf((String.format("%.0f", maxResolution))) + " MP");
 
 
-        double height = size.height;
-        double width = size.width;
-        float mgBack = (float) ((height * width) / 1024000);
-        tv_camera_back.setText(String.valueOf((String.format("%.0f", mgBack))) + " MP");
+                    }
+                }
 
-        camera.release();
+                camera.release();
+            }
+        }
+
+        return maxResolution;
     }
 
 
-    private void getFrontCameraInfo() {
-
-        Camera camera = Camera.open(1);
-
-        android.hardware.Camera.Parameters parameters = camera.getParameters();
-        android.hardware.Camera.Size size = parameters.getPictureSize();
 
 
-        double height = size.height;
-        double width = size.width;
-        float mgFront = (float) ((height * width) / 1024000);
-        tv_camera_front.setText(String.valueOf((String.format("%.0f", mgFront))) + " MP");
 
-        camera.release();
+    public float getFrontCameraResolutionInMp() {
+        int noOfCameras = Camera.getNumberOfCameras();
+        float maxResolution = -1;
+        long pixelCount = -1;
+        for (int i = 0;i < noOfCameras;i++)
+        {
+            Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+            Camera.getCameraInfo(i, cameraInfo);
+
+            if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT)
+            {
+                Camera camera = Camera.open(i);;
+                Camera.Parameters cameraParams = camera.getParameters();
+                for (int j = 0;j < cameraParams.getSupportedPictureSizes().size();j++)
+                {
+                    long pixelCountTemp = cameraParams.getSupportedPictureSizes().get(j).width * cameraParams.getSupportedPictureSizes().get(j).height; // Just changed i to j in this loop
+                    if (pixelCountTemp > pixelCount)
+                    {
+                        pixelCount = pixelCountTemp;
+                        maxResolution = ((float)pixelCountTemp) / (1024000.0f);
+                        tv_camera_front.setText(String.valueOf((String.format("%.0f", maxResolution))) + " MP");
 
 
+
+                    }
+                }
+
+                camera.release();
+            }
+        }
+
+        return maxResolution;
     }
+
+
+
+
+
+//    private void getBackCameraInfo() {
+//
+//        Camera camera = Camera.open(0);
+//
+//        android.hardware.Camera.Parameters parameters = camera.getParameters();
+//        android.hardware.Camera.Size size = parameters.getPictureSize();
+//
+//
+//        double height = size.height;
+//        double width = size.width;
+//        float mgBack = (float) ((height * width) / 1024000);
+//        tv_camera_back.setText(String.valueOf((String.format("%.0f", mgBack))) + " MP");
+//
+//        camera.release();
+//    }
+
+
+//    private void getFrontCameraInfo() {
+//
+//        Camera camera = Camera.open(1);
+//
+//        android.hardware.Camera.Parameters parameters = camera.getParameters();
+//        android.hardware.Camera.Size size = parameters.getPictureSize();
+//
+//
+//        double height = size.height;
+//        double width = size.width;
+//        float mgFront = (float) ((height * width) / 1024000);
+//        tv_camera_front.setText(String.valueOf((String.format("%.0f", mgFront))) + " MP");
+//
+//        camera.release();
+//
+//
+//    }
 
 
     private void getFlashInfo() {

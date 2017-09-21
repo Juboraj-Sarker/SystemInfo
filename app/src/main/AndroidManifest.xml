@@ -48,36 +48,49 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:theme">
+
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <receiver android:name=".PowerConnectionReceiver">
+            <receiver
+                android:name=".PowerConnectionReceiver">
                 <intent-filter>
                     <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                     <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
                 </intent-filter>
             </receiver>
+
         </activity>
-        <activity android:name=".activities.AppActivity">
+
+
+        <activity
+            android:name=".activities.AppActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
-        <activity android:name=".activities.LicenseActivity" />
+
+        <activity android:name=".activities.LicenseActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".activities.AboutActivity"
-            android:label="About me"
+            android:label="About Me"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.AboutActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
+
     </application>
 </manifest>
