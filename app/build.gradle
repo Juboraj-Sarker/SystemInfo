@@ -9,8 +9,8 @@ android {
         applicationId "com.juborajsarker.systeminfo"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 8
-        versionName "8.0"
+        versionCode 9
+        versionName "9.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         jackOptions {
@@ -27,6 +27,15 @@ android {
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
+
+
+        }
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
         }
     }
     buildTypes {

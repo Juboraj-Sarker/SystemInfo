@@ -184,7 +184,7 @@
                         android:paddingRight="8dp"
                         android:textStyle="bold"
                         android:textIsSelectable="true"
-                        android:textColor="@color/textColorBlack"
+                        android:textColor="#2b49ae"
                         android:textSize="18sp" />
 
 
@@ -223,7 +223,7 @@
                         android:textStyle="bold"
                         android:text=""
                         android:textIsSelectable="true"
-                        android:textColor="@color/textColorBlack"
+                        android:textColor="#2b49ae"
                         android:textSize="18sp" />
 
 
