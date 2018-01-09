@@ -1,0 +1,2 @@
+# SystemInfo
+System Info is a free android application which will give all information about user’s device. This application has been designed very nicely and categorized all the data very nicely. User will able to know about his/her device info, Memory Info, Battery Info, Network Info, Operating Info, CPU Info, Sensor Info, Installed Apps Info and System Apps Info. And user will also have the feature of sharing all apps including installed and system apps via any kinds of sharing apps ex. ShareIt, Bluetooth, Whatsapp etc.
