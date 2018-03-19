@@ -47,6 +47,7 @@
     <string name="pro_feature_3">Uninstall system apps</string>
     <string name="pro_feature_4">Remove cache and clean data per app</string>
 
+
     <!-- Dialogs -->
     <string name="dialog_saved">\"%s\" APK saved</string>
     <string name="dialog_saved_description">\"%1$s\" APK has been saved into \"SystemInfo\" folder with name: %2$s</string>
