@@ -6,6 +6,7 @@ android:layout_height="match_parent"
 xmlns:recyclerviewfastscroller="http://schemas.android.com/apk/res-auto"
 xmlns:wheel="http://schemas.android.com/apk/res-auto"
 android:orientation="vertical"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
 tools:context="com.juborajsarker.systeminfo.fragment.apps.SystemAppsFragment">
 
 
@@ -28,16 +29,26 @@ tools:context="com.juborajsarker.systeminfo.fragment.apps.SystemAppsFragment">
     wheel:matProg_barColor="@color/primary"
     wheel:matProg_progressIndeterminate="true" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        android:layout_gravity="center"
+        ads:adUnitId="@string/banner_home_footer_1">
+    </com.google.android.gms.ads.AdView>
 
-<com.yalantis.phoenix.PullToRefreshView
+
+    <com.yalantis.phoenix.PullToRefreshView
     android:id="@+id/pull_to_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/appList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 </com.yalantis.phoenix.PullToRefreshView>
 
 

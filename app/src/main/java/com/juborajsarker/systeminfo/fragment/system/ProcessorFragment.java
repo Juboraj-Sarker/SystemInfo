@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.juborajsarker.systeminfo.R;
 
 import java.io.BufferedReader;
@@ -66,6 +69,10 @@ public class ProcessorFragment extends Fragment {
 
 
 
+        MobileAds.initialize(getActivity().getApplicationContext(), getString(R.string.banner_home_footer_1));
+        AdView mAdView = (AdView) view.findViewById(R.id.adView1);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("93448558CC721EBAD8FAAE5DA52596D3").build();
+        mAdView.loadAd(adRequest);
 
 
 

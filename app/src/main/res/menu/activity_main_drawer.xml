@@ -15,6 +15,10 @@
             android:id="@+id/nav_apps"
             android:icon="@drawable/ic_app_icon"
             android:title="Apps Info" />
+        <item
+            android:id="@+id/nav_remove_ads"
+            android:icon="@drawable/ic_block"
+            android:title="Remove Ads" />
 
     </group>
 

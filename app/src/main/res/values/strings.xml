@@ -2,12 +2,10 @@
     <string name="app_name">System Info</string>
 
 
-
     <string name="banner_home_footer_1">ca-app-pub-5809082953640465/7798733669</string>
 
 
     <string name="interstitial_full_screen1">ca-app-pub-5809082953640465/1041753628</string>
-
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -128,6 +126,7 @@
 
     <!-- Toasts -->
     <string name="tap_exit">Tap again to close the app</string>
+    <string name="juboraj_sarker"><u>Juboraj Sarker</u></string>
 
 
 </resources>

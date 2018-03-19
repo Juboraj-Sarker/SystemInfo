@@ -13,4 +13,21 @@
         <item>Fecha de instalación</item>
         <item>Fecha de actualización</item>
     </string-array>
+
+
+    <string-array name="filenameValues" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+
+
+    <string-array name="sortValues" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 </resources>

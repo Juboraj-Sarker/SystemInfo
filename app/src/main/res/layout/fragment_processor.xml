@@ -5,6 +5,7 @@
     xmlns:wheel="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#fff"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context="com.juborajsarker.systeminfo.fragment.system.ProcessorFragment">
 
     <ScrollView
@@ -20,7 +21,16 @@
             android:orientation="vertical">
 
 
-
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="SMART_BANNER"
+                android:layout_gravity="center"
+                ads:adUnitId="@string/banner_home_footer_1">
+            </com.google.android.gms.ads.AdView>
 
 
 

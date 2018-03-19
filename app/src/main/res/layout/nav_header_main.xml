@@ -17,7 +17,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity=""
-        app:srcCompat="@mipmap/main_icon" />
+        app:srcCompat="@drawable/main_icon" />
 
     <TextView
         android:layout_width="match_parent"
